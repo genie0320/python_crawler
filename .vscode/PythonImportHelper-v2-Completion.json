@@ -1,0 +1,64 @@
+[
+    {
+        "label": "param",
+        "importPath": "altair",
+        "description": "altair",
+        "isExtraImport": true,
+        "detail": "altair",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "kind": 5,
+        "importPath": "exercise.day01_requests",
+        "description": "exercise.day01_requests",
+        "peekOfCode": "URL = \"http://httpbin.org\"\n# response = requests.get(URL + \"/get\")\n# print(response.status_code)\n# print(response.text)\n# response = requests.post(URL + \"/post\")\n# print(URL + \"/post\")\n# print(response.status_code)\n# print(response.text)\n# response = requests.put(URL + \"/put\")\n# print(response.status_code)",
+        "detail": "exercise.day01_requests",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "kind": 5,
+        "importPath": "exercise.day01_requests",
+        "description": "exercise.day01_requests",
+        "peekOfCode": "headers = {\"Content-Type\": \"application/json; charset=utf-8\", \"test\": \"test\"}\nresponse = requests.get(URL + \"/get\", headers=headers)\n# etc. ************************************************************\ndata = {\"data01\": \"genie\", \"data02\": \"nyanya\"}\nresponse = requests.post(URL + \"/post\", headers=headers, data=data)\nprint(response.status_code)\nprint(response.text)",
+        "detail": "exercise.day01_requests",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "exercise.day01_requests",
+        "description": "exercise.day01_requests",
+        "peekOfCode": "response = requests.get(URL + \"/get\", headers=headers)\n# etc. ************************************************************\ndata = {\"data01\": \"genie\", \"data02\": \"nyanya\"}\nresponse = requests.post(URL + \"/post\", headers=headers, data=data)\nprint(response.status_code)\nprint(response.text)",
+        "detail": "exercise.day01_requests",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "exercise.day01_requests",
+        "description": "exercise.day01_requests",
+        "peekOfCode": "data = {\"data01\": \"genie\", \"data02\": \"nyanya\"}\nresponse = requests.post(URL + \"/post\", headers=headers, data=data)\nprint(response.status_code)\nprint(response.text)",
+        "detail": "exercise.day01_requests",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "exercise.day01_requests",
+        "description": "exercise.day01_requests",
+        "peekOfCode": "response = requests.post(URL + \"/post\", headers=headers, data=data)\nprint(response.status_code)\nprint(response.text)",
+        "detail": "exercise.day01_requests",
+        "documentation": {}
+    }
+]
