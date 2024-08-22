@@ -17,6 +17,84 @@
         "documentation": {}
     },
     {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "boto3.resources",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "boto3.resources",
+        "description": "boto3.resources",
+        "detail": "boto3.resources",
+        "documentation": {}
+    },
+    {
+        "label": "parse",
+        "importPath": "urllib",
+        "description": "urllib",
+        "isExtraImport": true,
+        "detail": "urllib",
+        "documentation": {}
+    },
+    {
+        "label": "boto3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "boto3",
+        "description": "boto3",
+        "detail": "boto3",
+        "documentation": {}
+    },
+    {
+        "label": "awscli",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "awscli",
+        "description": "awscli",
+        "detail": "awscli",
+        "documentation": {}
+    },
+    {
         "label": "URL",
         "kind": 5,
         "importPath": "exercise.day01_requests",
@@ -59,6 +137,249 @@
         "description": "exercise.day01_requests",
         "peekOfCode": "response = requests.post(URL + \"/post\", headers=headers, data=data)\nprint(response.status_code)\nprint(response.text)",
         "detail": "exercise.day01_requests",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "kind": 5,
+        "importPath": "exercise.day04_async",
+        "description": "exercise.day04_async",
+        "peekOfCode": "URL = \"https://n.news.naver.com/article/016/0002349047\"\n# 네이버 댓글의 경우, 전에 머물던 페이지의 정보를 가지고 댓글정보를 찾아온다. 따라서 referer 정보가 꼭 필요하다.\nheaders = {\n    \"accept\": \"*/*\",\n    \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko-KR,ko;q=0.9,ja-JP;q=0.8,ja;q=0.7,en-US;q=0.6,en;q=0.5\",\n    \"referer\": \"https://n.news.naver.com/article/comment/016/0002349047\",\n    \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\n}\nres = requests.get(URL)",
+        "detail": "exercise.day04_async",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "kind": 5,
+        "importPath": "exercise.day04_async",
+        "description": "exercise.day04_async",
+        "peekOfCode": "headers = {\n    \"accept\": \"*/*\",\n    \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko-KR,ko;q=0.9,ja-JP;q=0.8,ja;q=0.7,en-US;q=0.6,en;q=0.5\",\n    \"referer\": \"https://n.news.naver.com/article/comment/016/0002349047\",\n    \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\n}\nres = requests.get(URL)\nif res.status_code == 200:\n    data = {}",
+        "detail": "exercise.day04_async",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "exercise.day04_async",
+        "description": "exercise.day04_async",
+        "peekOfCode": "res = requests.get(URL)\nif res.status_code == 200:\n    data = {}\n    # soup 만들기\n    soup = BeautifulSoup(res.text, \"html.parser\")\n    # title -----------------------\n    title = soup.find(\"h2\", class_=\"media_end_head_headline\").text.strip()\n    data[\"title\"] = title\n    # content ---------------------\n    article_content = soup.find(\"article\", class_=\"_article_content\")",
+        "detail": "exercise.day04_async",
+        "documentation": {}
+    },
+    {
+        "label": "get_infos",
+        "kind": 2,
+        "importPath": "exercise.day05-yes24",
+        "description": "exercise.day05-yes24",
+        "peekOfCode": "def get_infos(URL):\n    response = requests.get(URL)\n    if response.status_code == 200:\n        soup = bs4(response.text, \"html.parser\")\n        datas = {}\n        for book in soup.select(\"ul#yesBestList li\"):\n            infos = book.select_one(\".item_info\")\n            if infos:\n                keywords = []\n                title = infos.select_one(\"a.gd_name\").text",
+        "detail": "exercise.day05-yes24",
+        "documentation": {}
+    },
+    {
+        "label": "get_htmls",
+        "kind": 2,
+        "importPath": "exercise.day05-yes24",
+        "description": "exercise.day05-yes24",
+        "peekOfCode": "def get_htmls(URL):\n    response = requests.get(URL)\n    soup = bs4(response.text, \"html.parser\")\n    pages = int(soup.select(\".yesUI_pagen\")[-1].select(\"a\")[-1].text)\n    return pages, soup\n# 이하 메인 플로우\nURL = \"https://www.yes24.com/Product/Category/BestSeller?categoryNumber=001001026&pageNumber=1&pageSize=120\"\ndatas = {}\npages, soup = get_htmls(URL)\nfor page in range(1, pages + 1):",
+        "detail": "exercise.day05-yes24",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "kind": 5,
+        "importPath": "exercise.day05-yes24",
+        "description": "exercise.day05-yes24",
+        "peekOfCode": "URL = \"https://www.yes24.com/Product/Category/BestSeller?categoryNumber=001001026&pageNumber=1&pageSize=120\"\ndatas = {}\npages, soup = get_htmls(URL)\nfor page in range(1, pages + 1):\n    _URL = f\"https://www.yes24.com/Product/Category/BestSeller?categoryNumber=001001026&pageNumber={page}&pageSize=120\"\n    datas.update(get_infos(_URL))\n    time.sleep(5)\nwith open(\"books.json\", \"w\", encoding=\"utf-8 sig\") as json_file:\n    json.dump(datas, json_file, indent=4, ensure_ascii=False)",
+        "detail": "exercise.day05-yes24",
+        "documentation": {}
+    },
+    {
+        "label": "datas",
+        "kind": 5,
+        "importPath": "exercise.day05-yes24",
+        "description": "exercise.day05-yes24",
+        "peekOfCode": "datas = {}\npages, soup = get_htmls(URL)\nfor page in range(1, pages + 1):\n    _URL = f\"https://www.yes24.com/Product/Category/BestSeller?categoryNumber=001001026&pageNumber={page}&pageSize=120\"\n    datas.update(get_infos(_URL))\n    time.sleep(5)\nwith open(\"books.json\", \"w\", encoding=\"utf-8 sig\") as json_file:\n    json.dump(datas, json_file, indent=4, ensure_ascii=False)",
+        "detail": "exercise.day05-yes24",
+        "documentation": {}
+    },
+    {
+        "label": "magazineOffset",
+        "kind": 5,
+        "importPath": "exercise.day06-jungle",
+        "description": "exercise.day06-jungle",
+        "peekOfCode": "magazineOffset = 0\ncontestOffset = 0\nexhibitOffset = 0\ngalleryOffset = 0\ndatas = []\nfor i in range(3):\n    URL = f\"https://www.jungle.co.kr/recent.json?magazineOffset={magazineOffset}&contestOffset={contestOffset}&exhibitOffset={exhibitOffset}&galleryOffset={galleryOffset}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    articles = response.json()[\"moreList\"]",
+        "detail": "exercise.day06-jungle",
+        "documentation": {}
+    },
+    {
+        "label": "contestOffset",
+        "kind": 5,
+        "importPath": "exercise.day06-jungle",
+        "description": "exercise.day06-jungle",
+        "peekOfCode": "contestOffset = 0\nexhibitOffset = 0\ngalleryOffset = 0\ndatas = []\nfor i in range(3):\n    URL = f\"https://www.jungle.co.kr/recent.json?magazineOffset={magazineOffset}&contestOffset={contestOffset}&exhibitOffset={exhibitOffset}&galleryOffset={galleryOffset}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    articles = response.json()[\"moreList\"]\n    _url = \"https://www.jungle.co.kr/\"",
+        "detail": "exercise.day06-jungle",
+        "documentation": {}
+    },
+    {
+        "label": "exhibitOffset",
+        "kind": 5,
+        "importPath": "exercise.day06-jungle",
+        "description": "exercise.day06-jungle",
+        "peekOfCode": "exhibitOffset = 0\ngalleryOffset = 0\ndatas = []\nfor i in range(3):\n    URL = f\"https://www.jungle.co.kr/recent.json?magazineOffset={magazineOffset}&contestOffset={contestOffset}&exhibitOffset={exhibitOffset}&galleryOffset={galleryOffset}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    articles = response.json()[\"moreList\"]\n    _url = \"https://www.jungle.co.kr/\"\n    for art in articles[:1]:",
+        "detail": "exercise.day06-jungle",
+        "documentation": {}
+    },
+    {
+        "label": "galleryOffset",
+        "kind": 5,
+        "importPath": "exercise.day06-jungle",
+        "description": "exercise.day06-jungle",
+        "peekOfCode": "galleryOffset = 0\ndatas = []\nfor i in range(3):\n    URL = f\"https://www.jungle.co.kr/recent.json?magazineOffset={magazineOffset}&contestOffset={contestOffset}&exhibitOffset={exhibitOffset}&galleryOffset={galleryOffset}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    articles = response.json()[\"moreList\"]\n    _url = \"https://www.jungle.co.kr/\"\n    for art in articles[:1]:\n        data = {",
+        "detail": "exercise.day06-jungle",
+        "documentation": {}
+    },
+    {
+        "label": "datas",
+        "kind": 5,
+        "importPath": "exercise.day06-jungle",
+        "description": "exercise.day06-jungle",
+        "peekOfCode": "datas = []\nfor i in range(3):\n    URL = f\"https://www.jungle.co.kr/recent.json?magazineOffset={magazineOffset}&contestOffset={contestOffset}&exhibitOffset={exhibitOffset}&galleryOffset={galleryOffset}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    articles = response.json()[\"moreList\"]\n    _url = \"https://www.jungle.co.kr/\"\n    for art in articles[:1]:\n        data = {\n            \"title\": art[\"title\"],",
+        "detail": "exercise.day06-jungle",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "kind": 5,
+        "importPath": "day08-twt",
+        "description": "day08-twt",
+        "peekOfCode": "URL = \"https://x.com/i/api/graphql/E3opETHurmVJflFsUBVuUQ/UserTweets\"\nHEADERS = {\n    \"x-csrf-token\": \"c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048\",\n    \"authorization\": \"Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA\",\n    \"cookie\": 'guest_id=v1%3A171411388900703227; night_mode=2; guest_id_marketing=v1%3A171411388900703227; guest_id_ads=v1%3A171411388900703227; kdt=uJ2VZEqlWQo1WBG72XPqfQMjK3edSkbvrCrJEgte; auth_token=5fff62f2a70f8b836896723fb738b697286bfe0f; ct0=c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048; twid=u%3D64573858; lang=ko; personalization_id=\"v1_BjeEM1/QoFi8ze4UOmysvw==\"',\n    \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\n    \"accept\": \"*/*\",\n    \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko-KR,ko;q=0.9,ja-JP;q=0.8,ja;q=0.7,en-US;q=0.6,en;q=0.5\",\n    \"x-client-transaction-id\": \"qrW/mQCa5H9C+6RP7KONzcFu0tBsB4N6ko5t3BG9kZUatu9V0wpyudKmkRvhUS568tLD3ai9HP4VoeLUAykS0fbq6onAqQ\",",
+        "detail": "day08-twt",
+        "documentation": {}
+    },
+    {
+        "label": "HEADERS",
+        "kind": 5,
+        "importPath": "day08-twt",
+        "description": "day08-twt",
+        "peekOfCode": "HEADERS = {\n    \"x-csrf-token\": \"c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048\",\n    \"authorization\": \"Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA\",\n    \"cookie\": 'guest_id=v1%3A171411388900703227; night_mode=2; guest_id_marketing=v1%3A171411388900703227; guest_id_ads=v1%3A171411388900703227; kdt=uJ2VZEqlWQo1WBG72XPqfQMjK3edSkbvrCrJEgte; auth_token=5fff62f2a70f8b836896723fb738b697286bfe0f; ct0=c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048; twid=u%3D64573858; lang=ko; personalization_id=\"v1_BjeEM1/QoFi8ze4UOmysvw==\"',\n    \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\n    \"accept\": \"*/*\",\n    \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko-KR,ko;q=0.9,ja-JP;q=0.8,ja;q=0.7,en-US;q=0.6,en;q=0.5\",\n    \"x-client-transaction-id\": \"qrW/mQCa5H9C+6RP7KONzcFu0tBsB4N6ko5t3BG9kZUatu9V0wpyudKmkRvhUS568tLD3ai9HP4VoeLUAykS0fbq6onAqQ\",\n    \"x-twitter-active-user\": \"yes\",",
+        "detail": "day08-twt",
+        "documentation": {}
+    },
+    {
+        "label": "params",
+        "kind": 5,
+        "importPath": "day08-twt",
+        "description": "day08-twt",
+        "peekOfCode": "params = {\"variables\": '{\"screen_name\":\"catdiarys\",\"withSafetyModeUserFields\":true}'}\nparams_text = json.dumps(params)\nparams_text = parse.quote(params_text)\n# URL + \"?variables=\" + params_text\nURL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
+        "detail": "day08-twt",
+        "documentation": {}
+    },
+    {
+        "label": "params_text",
+        "kind": 5,
+        "importPath": "day08-twt",
+        "description": "day08-twt",
+        "peekOfCode": "params_text = json.dumps(params)\nparams_text = parse.quote(params_text)\n# URL + \"?variables=\" + params_text\nURL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
+        "detail": "day08-twt",
+        "documentation": {}
+    },
+    {
+        "label": "params_text",
+        "kind": 5,
+        "importPath": "day08-twt",
+        "description": "day08-twt",
+        "peekOfCode": "params_text = parse.quote(params_text)\n# URL + \"?variables=\" + params_text\nURL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
+        "detail": "day08-twt",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "kind": 5,
+        "importPath": "day08-twt",
+        "description": "day08-twt",
+        "peekOfCode": "URL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
+        "detail": "day08-twt",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "day08-twt",
+        "description": "day08-twt",
+        "peekOfCode": "response = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
+        "detail": "day08-twt",
+        "documentation": {}
+    },
+    {
+        "label": "datas",
+        "kind": 5,
+        "importPath": "folin",
+        "description": "folin",
+        "peekOfCode": "datas = []\nstart_url = f\"https://www.folin.co/api/story?page=1\"\nresponse = requests.get(start_url)\nres_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()",
+        "detail": "folin",
+        "documentation": {}
+    },
+    {
+        "label": "start_url",
+        "kind": 5,
+        "importPath": "folin",
+        "description": "folin",
+        "peekOfCode": "start_url = f\"https://www.folin.co/api/story?page=1\"\nresponse = requests.get(start_url)\nres_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:",
+        "detail": "folin",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "folin",
+        "description": "folin",
+        "peekOfCode": "response = requests.get(start_url)\nres_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:\n        art_id = item[\"id\"]",
+        "detail": "folin",
+        "documentation": {}
+    },
+    {
+        "label": "res_json",
+        "kind": 5,
+        "importPath": "folin",
+        "description": "folin",
+        "peekOfCode": "res_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:\n        art_id = item[\"id\"]\n        people = []",
+        "detail": "folin",
+        "documentation": {}
+    },
+    {
+        "label": "total",
+        "kind": 5,
+        "importPath": "folin",
+        "description": "folin",
+        "peekOfCode": "total = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:\n        art_id = item[\"id\"]\n        people = []\n        for person in item[\"Item\"][\"Linkers\"]:",
+        "detail": "folin",
+        "documentation": {}
+    },
+    {
+        "label": "s3",
+        "kind": 5,
+        "importPath": "folin",
+        "description": "folin",
+        "peekOfCode": "s3 = boto3.resource(\"s3\")\nbody = open(\"folin.json\", \"rb\")\ns3.Bucket(\"test-codi42-python\").put_object(Key=\"folin.json\", Body=body)",
+        "detail": "folin",
+        "documentation": {}
+    },
+    {
+        "label": "body",
+        "kind": 5,
+        "importPath": "folin",
+        "description": "folin",
+        "peekOfCode": "body = open(\"folin.json\", \"rb\")\ns3.Bucket(\"test-codi42-python\").put_object(Key=\"folin.json\", Body=body)",
+        "detail": "folin",
+        "documentation": {}
+    },
+    {
+        "label": "s3",
+        "kind": 5,
+        "importPath": "howTo_s3",
+        "description": "howTo_s3",
+        "peekOfCode": "s3 = boto3.resource(\"s3\")\n# PUT\n# data = open(\"data_jungle.json\", \"rb\")\n# s3.Bucket(\"test-codi42-python\").put_object(Key=\"test/data_jungle.json\", Body=data)\n# GET\ns3.Bucket(\"test-codi42-python\").download_file(\"test/data_jungle.json\", \"data_down.json\")\n# %%",
+        "detail": "howTo_s3",
         "documentation": {}
     }
 ]
