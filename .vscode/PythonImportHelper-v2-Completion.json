@@ -1,13 +1,5 @@
 [
     {
-        "label": "param",
-        "importPath": "altair",
-        "description": "altair",
-        "isExtraImport": true,
-        "detail": "altair",
-        "documentation": {}
-    },
-    {
         "label": "requests",
         "kind": 6,
         "isExtraImport": true,
@@ -17,12 +9,27 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
         "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
         "documentation": {}
     },
     {
@@ -35,28 +42,29 @@
         "documentation": {}
     },
     {
-        "label": "BeautifulSoup",
-        "importPath": "bs4",
-        "description": "bs4",
-        "isExtraImport": true,
-        "detail": "bs4",
-        "documentation": {}
-    },
-    {
-        "label": "BeautifulSoup",
-        "importPath": "bs4",
-        "description": "bs4",
-        "isExtraImport": true,
-        "detail": "bs4",
-        "documentation": {}
-    },
-    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "time",
         "description": "time",
         "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "param",
+        "importPath": "altair",
+        "description": "altair",
+        "isExtraImport": true,
+        "detail": "altair",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -92,6 +100,136 @@
         "importPath": "awscli",
         "description": "awscli",
         "detail": "awscli",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "selenium.webdriver.chrome.service",
+        "description": "selenium.webdriver.chrome.service",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.service",
+        "documentation": {}
+    },
+    {
+        "label": "Options",
+        "importPath": "selenium.webdriver.chrome.options",
+        "description": "selenium.webdriver.chrome.options",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.options",
+        "documentation": {}
+    },
+    {
+        "label": "ChromeDriverManager",
+        "importPath": "webdriver_manager.chrome",
+        "description": "webdriver_manager.chrome",
+        "isExtraImport": true,
+        "detail": "webdriver_manager.chrome",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "save_data",
+        "kind": 2,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "def save_data(data, file_name):\n    with open(file_name, \"w\", encoding=\"utf8\") as json_file:\n        json.dump(data, json_file, ensure_ascii=False)\n    print(f\"{file_name}saveed\")\n# 영상정보 추출\ndef get_videos(video_list):\n    class_list = []\n    for v in video_list[\"data\"][\"categoryProductsV3\"][\"edges\"]:\n        video = {\n            \"productId\": v[\"node\"][\"_id\"],",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "get_videos",
+        "kind": 2,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "def get_videos(video_list):\n    class_list = []\n    for v in video_list[\"data\"][\"categoryProductsV3\"][\"edges\"]:\n        video = {\n            \"productId\": v[\"node\"][\"_id\"],\n            \"class_id\": v[\"node\"][\"klassId\"],\n            \"clsss_title\": v[\"node\"][\"title\"],\n            \"categoryId\": v[\"node\"][\"category\"][\"id\"],\n            \"categoryTitle\": v[\"node\"][\"category\"][\"title\"],\n            \"author\": v[\"node\"][\"author\"][\"displayName\"],",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "get_lists",
+        "kind": 2,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "def get_lists(categoryId, json_file):\n    hasNext = json_file[\"data\"][\"categoryProductsV3\"][\"pageInfo\"][\"hasNextPage\"]\n    end_cursor = json_file[\"data\"][\"categoryProductsV3\"][\"pageInfo\"][\"endCursor\"]\n    product_list = []\n    # while hasNext:\n    for i in range(0, 3):\n        payload = {\n            \"operationName\": \"CategoryProductsV3OnCategoryProductList\",\n            \"variables\": '{\"filter\":{\"purchaseOptions\":[\"Lifetime\",\"Rental\",\"Subscription\"]},\"categoryId\":\"'\n            + categoryId",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "kind": 5,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "URL = \"https://cdn-production-gateway.class101.net/graphql\"\nheaders = {\n    \"accept\": \"*/*\",\n    # \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko\",\n    # \"apollographql-client-name\": \"web-prod\",\n    # \"apollographql-operation-type\": \"query\",\n    # \"cache-control\": \"no-cache\",\n    # \"content-length\": \"603\",\n    # \"content-type\": \"application/json\",",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "kind": 5,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "headers = {\n    \"accept\": \"*/*\",\n    # \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko\",\n    # \"apollographql-client-name\": \"web-prod\",\n    # \"apollographql-operation-type\": \"query\",\n    # \"cache-control\": \"no-cache\",\n    # \"content-length\": \"603\",\n    # \"content-type\": \"application/json\",\n    # \"cookie\": \"auid=a677cfb1-536d-40bd-ae1c-2f8e5f7f5743; _fwb=128vOB0RnL45jwJPUpCENTl.1715056641388; ab.storage.deviceId.2b3f474c-7aee-41a1-b6f9-c6be442dd067=%7B%22g%22%3A%2278361901-3a1a-9762-0d8a-469ff5435585%22%2C%22c%22%3A1715056641917%2C%22l%22%3A1715056641917%7D; ch-veil-id=be33a599-6c8b-4d5f-8b55-cbbc893e3898; ab.storage.userId.2b3f474c-7aee-41a1-b6f9-c6be442dd067=%7B%22g%22%3A%22L3jJ4nEavubk4uekbuCNaX7DHBk2%22%2C%22c%22%3A1717477908368%2C%22l%22%3A1717477908368%7D; ajs_anonymous_id=a677cfb1-536d-40bd-ae1c-2f8e5f7f5743; ajs_user_id=L3jJ4nEavubk4uekbuCNaX7DHBk2; ch-session-4864=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZXMiLCJrZXkiOiI0ODY0LTY2YzcwNGJmMTc0MmM0NGEwZjQwIiwiaWF0IjoxNzI0Mzg3OTYzLCJleHAiOjE3MjY5Nzk5NjN9.PZdKTMoubhOP2DskmMj5wlGvkGJJOpKTZPCVvsqTFGg; aws-waf-token=8ed9039f-2427-42e4-947a-7d3e20394b55:AgoAqAoij2gFAAAA:reS8nlsYXDiSTOB3gbzaiGD8gjaBiiOFi7ArUBfSNPBEjZXVDtpmjyjCqZNRh1XKgpLKbrKoperdhBm8P7PEn2tUGEsRT/p3UT6cMROkzVPLhsED/n5mhm3Wd6zYkvKd99OsWkCxs50eQEafm6OmEF5rxHJol6HOradh1P9MbDCBT0aHncCokDcP0TogbR2EkESY7LDbkqoYG3hN6dwWn8KczbGbPgq4mZWA2woefoGmlU1RvUXTBCY6; ab.storage.sessionId.2b3f474c-7aee-41a1-b6f9-c6be442dd067=%7B%22g%22%3A%22ca244a77-31ea-8eef-e9d1-00245f241f0e%22%2C%22e%22%3A1724390880812%2C%22c%22%3A1724373655066%2C%22l%22%3A1724389080812%7D\",",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "payload",
+        "kind": 5,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "payload = {\n    \"operationName\": \"CategoriesOnPlusDesktopCategoryTable\",\n    \"variables\": {},\n    \"query\": \"query CategoriesOnPlusDesktopCategoryTable {\\n  categories: categoriesV2ByDepth(depth: 0) {\\n    ...CategoryV2OnDesktopCategoryTable\\n    children {\\n      ...CategoryV2OnDesktopCategoryTable\\n      __typename\\n    }\\n    __typename\\n  }\\n}\\n\\nfragment CategoryV2OnDesktopCategoryTable on CategoryV2 {\\n  id\\n  title\\n  depth\\n  __typename\\n}\",\n}\nres = requests.post(URL, headers=headers, json=payload)\ndepth000_json = res.json()\ndepth000s = []\ndepth001s = []\nfor menu in depth000_json[\"data\"][\"categories\"]:",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "res = requests.post(URL, headers=headers, json=payload)\ndepth000_json = res.json()\ndepth000s = []\ndepth001s = []\nfor menu in depth000_json[\"data\"][\"categories\"]:\n    depth000_id = menu[\"id\"]\n    depth000_title = menu[\"title\"]\n    depth000s.append(\n        {\n            \"id\": depth000_id,",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "depth000_json",
+        "kind": 5,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "depth000_json = res.json()\ndepth000s = []\ndepth001s = []\nfor menu in depth000_json[\"data\"][\"categories\"]:\n    depth000_id = menu[\"id\"]\n    depth000_title = menu[\"title\"]\n    depth000s.append(\n        {\n            \"id\": depth000_id,\n            \"title\": depth000_title,",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "depth000s",
+        "kind": 5,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "depth000s = []\ndepth001s = []\nfor menu in depth000_json[\"data\"][\"categories\"]:\n    depth000_id = menu[\"id\"]\n    depth000_title = menu[\"title\"]\n    depth000s.append(\n        {\n            \"id\": depth000_id,\n            \"title\": depth000_title,\n        }",
+        "detail": "exercise.cls101-requests",
+        "documentation": {}
+    },
+    {
+        "label": "depth001s",
+        "kind": 5,
+        "importPath": "exercise.cls101-requests",
+        "description": "exercise.cls101-requests",
+        "peekOfCode": "depth001s = []\nfor menu in depth000_json[\"data\"][\"categories\"]:\n    depth000_id = menu[\"id\"]\n    depth000_title = menu[\"title\"]\n    depth000s.append(\n        {\n            \"id\": depth000_id,\n            \"title\": depth000_title,\n        }\n    )",
+        "detail": "exercise.cls101-requests",
         "documentation": {}
     },
     {
@@ -250,136 +388,190 @@
     {
         "label": "URL",
         "kind": 5,
-        "importPath": "day08-twt",
-        "description": "day08-twt",
+        "importPath": "exercise.day08-twt",
+        "description": "exercise.day08-twt",
         "peekOfCode": "URL = \"https://x.com/i/api/graphql/E3opETHurmVJflFsUBVuUQ/UserTweets\"\nHEADERS = {\n    \"x-csrf-token\": \"c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048\",\n    \"authorization\": \"Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA\",\n    \"cookie\": 'guest_id=v1%3A171411388900703227; night_mode=2; guest_id_marketing=v1%3A171411388900703227; guest_id_ads=v1%3A171411388900703227; kdt=uJ2VZEqlWQo1WBG72XPqfQMjK3edSkbvrCrJEgte; auth_token=5fff62f2a70f8b836896723fb738b697286bfe0f; ct0=c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048; twid=u%3D64573858; lang=ko; personalization_id=\"v1_BjeEM1/QoFi8ze4UOmysvw==\"',\n    \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\n    \"accept\": \"*/*\",\n    \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko-KR,ko;q=0.9,ja-JP;q=0.8,ja;q=0.7,en-US;q=0.6,en;q=0.5\",\n    \"x-client-transaction-id\": \"qrW/mQCa5H9C+6RP7KONzcFu0tBsB4N6ko5t3BG9kZUatu9V0wpyudKmkRvhUS568tLD3ai9HP4VoeLUAykS0fbq6onAqQ\",",
-        "detail": "day08-twt",
+        "detail": "exercise.day08-twt",
         "documentation": {}
     },
     {
         "label": "HEADERS",
         "kind": 5,
-        "importPath": "day08-twt",
-        "description": "day08-twt",
+        "importPath": "exercise.day08-twt",
+        "description": "exercise.day08-twt",
         "peekOfCode": "HEADERS = {\n    \"x-csrf-token\": \"c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048\",\n    \"authorization\": \"Bearer AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA\",\n    \"cookie\": 'guest_id=v1%3A171411388900703227; night_mode=2; guest_id_marketing=v1%3A171411388900703227; guest_id_ads=v1%3A171411388900703227; kdt=uJ2VZEqlWQo1WBG72XPqfQMjK3edSkbvrCrJEgte; auth_token=5fff62f2a70f8b836896723fb738b697286bfe0f; ct0=c80f37d2ca45df97f8f105c26dc1c0459e504528ee4b4907ce8e15f3a875bda53b5b639552518939257fb78c6c9507cf2fd9545eaddb7239a0e35c3b6cdaad4c8fb968d4baa959e2e4f7ed50eec28048; twid=u%3D64573858; lang=ko; personalization_id=\"v1_BjeEM1/QoFi8ze4UOmysvw==\"',\n    \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36\",\n    \"accept\": \"*/*\",\n    \"accept-encoding\": \"gzip, deflate, br, zstd\",\n    \"accept-language\": \"ko-KR,ko;q=0.9,ja-JP;q=0.8,ja;q=0.7,en-US;q=0.6,en;q=0.5\",\n    \"x-client-transaction-id\": \"qrW/mQCa5H9C+6RP7KONzcFu0tBsB4N6ko5t3BG9kZUatu9V0wpyudKmkRvhUS568tLD3ai9HP4VoeLUAykS0fbq6onAqQ\",\n    \"x-twitter-active-user\": \"yes\",",
-        "detail": "day08-twt",
+        "detail": "exercise.day08-twt",
         "documentation": {}
     },
     {
         "label": "params",
         "kind": 5,
-        "importPath": "day08-twt",
-        "description": "day08-twt",
+        "importPath": "exercise.day08-twt",
+        "description": "exercise.day08-twt",
         "peekOfCode": "params = {\"variables\": '{\"screen_name\":\"catdiarys\",\"withSafetyModeUserFields\":true}'}\nparams_text = json.dumps(params)\nparams_text = parse.quote(params_text)\n# URL + \"?variables=\" + params_text\nURL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
-        "detail": "day08-twt",
+        "detail": "exercise.day08-twt",
         "documentation": {}
     },
     {
         "label": "params_text",
         "kind": 5,
-        "importPath": "day08-twt",
-        "description": "day08-twt",
+        "importPath": "exercise.day08-twt",
+        "description": "exercise.day08-twt",
         "peekOfCode": "params_text = json.dumps(params)\nparams_text = parse.quote(params_text)\n# URL + \"?variables=\" + params_text\nURL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
-        "detail": "day08-twt",
+        "detail": "exercise.day08-twt",
         "documentation": {}
     },
     {
         "label": "params_text",
         "kind": 5,
-        "importPath": "day08-twt",
-        "description": "day08-twt",
+        "importPath": "exercise.day08-twt",
+        "description": "exercise.day08-twt",
         "peekOfCode": "params_text = parse.quote(params_text)\n# URL + \"?variables=\" + params_text\nURL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
-        "detail": "day08-twt",
+        "detail": "exercise.day08-twt",
         "documentation": {}
     },
     {
         "label": "URL",
         "kind": 5,
-        "importPath": "day08-twt",
-        "description": "day08-twt",
+        "importPath": "exercise.day08-twt",
+        "description": "exercise.day08-twt",
         "peekOfCode": "URL = \"https://x.com/i/api/graphql/Yka-W8dz7RaEuQNkroPkYw/UserByScreenName\"\nresponse = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
-        "detail": "day08-twt",
+        "detail": "exercise.day08-twt",
         "documentation": {}
     },
     {
         "label": "response",
         "kind": 5,
-        "importPath": "day08-twt",
-        "description": "day08-twt",
+        "importPath": "exercise.day08-twt",
+        "description": "exercise.day08-twt",
         "peekOfCode": "response = requests.get(URL, params=params, headers=HEADERS)\n# response = requests.get(URL + \"?variables=\" + params_text, headers=HEADERS)\nprint(response.status_code)\nresponse.text",
-        "detail": "day08-twt",
+        "detail": "exercise.day08-twt",
         "documentation": {}
     },
     {
         "label": "datas",
         "kind": 5,
-        "importPath": "folin",
-        "description": "folin",
+        "importPath": "exercise.foling",
+        "description": "exercise.foling",
         "peekOfCode": "datas = []\nstart_url = f\"https://www.folin.co/api/story?page=1\"\nresponse = requests.get(start_url)\nres_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()",
-        "detail": "folin",
+        "detail": "exercise.foling",
         "documentation": {}
     },
     {
         "label": "start_url",
         "kind": 5,
-        "importPath": "folin",
-        "description": "folin",
+        "importPath": "exercise.foling",
+        "description": "exercise.foling",
         "peekOfCode": "start_url = f\"https://www.folin.co/api/story?page=1\"\nresponse = requests.get(start_url)\nres_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:",
-        "detail": "folin",
+        "detail": "exercise.foling",
         "documentation": {}
     },
     {
         "label": "response",
         "kind": 5,
-        "importPath": "folin",
-        "description": "folin",
+        "importPath": "exercise.foling",
+        "description": "exercise.foling",
         "peekOfCode": "response = requests.get(start_url)\nres_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:\n        art_id = item[\"id\"]",
-        "detail": "folin",
+        "detail": "exercise.foling",
         "documentation": {}
     },
     {
         "label": "res_json",
         "kind": 5,
-        "importPath": "folin",
-        "description": "folin",
+        "importPath": "exercise.foling",
+        "description": "exercise.foling",
         "peekOfCode": "res_json = response.json()\ntotal = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:\n        art_id = item[\"id\"]\n        people = []",
-        "detail": "folin",
+        "detail": "exercise.foling",
         "documentation": {}
     },
     {
         "label": "total",
         "kind": 5,
-        "importPath": "folin",
-        "description": "folin",
+        "importPath": "exercise.foling",
+        "description": "exercise.foling",
         "peekOfCode": "total = res_json[\"page\"][\"total\"]\n# for page in range(1, total+1):\nfor page in range(1, 3):\n    URL = f\"https://www.folin.co/api/story?page={page}\"\n    response = requests.get(URL)\n    response_json = response.json()\n    for item in response_json[\"items\"][\"recent_items\"]:\n        art_id = item[\"id\"]\n        people = []\n        for person in item[\"Item\"][\"Linkers\"]:",
-        "detail": "folin",
+        "detail": "exercise.foling",
         "documentation": {}
     },
     {
         "label": "s3",
         "kind": 5,
-        "importPath": "folin",
-        "description": "folin",
+        "importPath": "exercise.foling",
+        "description": "exercise.foling",
         "peekOfCode": "s3 = boto3.resource(\"s3\")\nbody = open(\"folin.json\", \"rb\")\ns3.Bucket(\"test-codi42-python\").put_object(Key=\"folin.json\", Body=body)",
-        "detail": "folin",
+        "detail": "exercise.foling",
         "documentation": {}
     },
     {
         "label": "body",
         "kind": 5,
-        "importPath": "folin",
-        "description": "folin",
+        "importPath": "exercise.foling",
+        "description": "exercise.foling",
         "peekOfCode": "body = open(\"folin.json\", \"rb\")\ns3.Bucket(\"test-codi42-python\").put_object(Key=\"folin.json\", Body=body)",
-        "detail": "folin",
+        "detail": "exercise.foling",
         "documentation": {}
     },
     {
         "label": "s3",
         "kind": 5,
-        "importPath": "howTo_s3",
-        "description": "howTo_s3",
+        "importPath": "exercise.howTo_s3",
+        "description": "exercise.howTo_s3",
         "peekOfCode": "s3 = boto3.resource(\"s3\")\n# PUT\n# data = open(\"data_jungle.json\", \"rb\")\n# s3.Bucket(\"test-codi42-python\").put_object(Key=\"test/data_jungle.json\", Body=data)\n# GET\ns3.Bucket(\"test-codi42-python\").download_file(\"test/data_jungle.json\", \"data_down.json\")\n# %%",
-        "detail": "howTo_s3",
+        "detail": "exercise.howTo_s3",
+        "documentation": {}
+    },
+    {
+        "label": "chrome_options",
+        "kind": 5,
+        "importPath": "cla101-selenium",
+        "description": "cla101-selenium",
+        "peekOfCode": "chrome_options = Options()\nchrome_options.add_experimental_option(\"detach\", True)\n# chrome_options.add_argument(\"--headless\")\n# Chrome driver Manager를 통해 크롬 드라이버 자동 설치 > 최신 버전을 설치 > Service에 저장\nservice = Service(excutable_path=ChromeDriverManager().install())\ndriver = webdriver.Chrome(service=service, options=chrome_options)\n# 이동하려는 해당 웹페이지 주소 할당\ndriver.get(\"https://class101.net/ko\")\nprint(driver.title)\ndriver.implicitly_wait(0.5)",
+        "detail": "cla101-selenium",
+        "documentation": {}
+    },
+    {
+        "label": "service",
+        "kind": 5,
+        "importPath": "cla101-selenium",
+        "description": "cla101-selenium",
+        "peekOfCode": "service = Service(excutable_path=ChromeDriverManager().install())\ndriver = webdriver.Chrome(service=service, options=chrome_options)\n# 이동하려는 해당 웹페이지 주소 할당\ndriver.get(\"https://class101.net/ko\")\nprint(driver.title)\ndriver.implicitly_wait(0.5)\ntext_box = driver.find_element(by=By.NAME, value=\"my-text\")\n<div class=\"css-zlo6qq\"><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0030e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">디지털 드로잉</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00304\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">드로잉</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00317\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">공예</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0034f\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">요리 · 음료</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0035e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">베이킹 · 디저트</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00365\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">음악</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00373\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">운동</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0037e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">라이프스타일</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00389\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">사진 · 영상</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003b3\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">금융 · 재테크</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003b7\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">창업 · 부업</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003c3\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">성공 마인드</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b839\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">프로그래밍</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83a\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">데이터사이언스</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83b\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">제품 기획</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83c\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">비즈니스</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83d\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">생산성</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">마케팅</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83f\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">디자인</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b840\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">영상/3D</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b841\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">영어</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b842\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">외국어 시험</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b843\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">제2 외국어</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003d6\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">아이 교육</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62fee7187e7da70bfa57950d\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">부모 교육</h3></a></div></div>",
+        "detail": "cla101-selenium",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "cla101-selenium",
+        "description": "cla101-selenium",
+        "peekOfCode": "driver = webdriver.Chrome(service=service, options=chrome_options)\n# 이동하려는 해당 웹페이지 주소 할당\ndriver.get(\"https://class101.net/ko\")\nprint(driver.title)\ndriver.implicitly_wait(0.5)\ntext_box = driver.find_element(by=By.NAME, value=\"my-text\")\n<div class=\"css-zlo6qq\"><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0030e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">디지털 드로잉</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00304\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">드로잉</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00317\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">공예</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0034f\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">요리 · 음료</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0035e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">베이킹 · 디저트</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00365\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">음악</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00373\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">운동</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0037e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">라이프스타일</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00389\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">사진 · 영상</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003b3\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">금융 · 재테크</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003b7\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">창업 · 부업</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003c3\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">성공 마인드</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b839\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">프로그래밍</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83a\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">데이터사이언스</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83b\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">제품 기획</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83c\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">비즈니스</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83d\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">생산성</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">마케팅</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83f\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">디자인</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b840\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">영상/3D</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b841\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">영어</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b842\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">외국어 시험</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b843\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">제2 외국어</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003d6\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">아이 교육</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62fee7187e7da70bfa57950d\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">부모 교육</h3></a></div></div>",
+        "detail": "cla101-selenium",
+        "documentation": {}
+    },
+    {
+        "label": "text_box",
+        "kind": 5,
+        "importPath": "cla101-selenium",
+        "description": "cla101-selenium",
+        "peekOfCode": "text_box = driver.find_element(by=By.NAME, value=\"my-text\")\n<div class=\"css-zlo6qq\"><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0030e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">디지털 드로잉</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00304\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">드로잉</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00317\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">공예</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0034f\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">요리 · 음료</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0035e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">베이킹 · 디저트</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00365\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">음악</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00373\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">운동</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed0037e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">라이프스타일</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed00389\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">사진 · 영상</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003b3\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">금융 · 재테크</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003b7\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">창업 · 부업</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003c3\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">성공 마인드</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b839\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">프로그래밍</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83a\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">데이터사이언스</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83b\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">제품 기획</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83c\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">비즈니스</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83d\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">생산성</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83e\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">마케팅</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b83f\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">디자인</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b840\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">영상/3D</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b841\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">영어</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b842\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">외국어 시험</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62206086d39299379ee5b843\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">제2 외국어</h3></a></div><div class=\"css-7wjmjf\"></div><div class=\"css-14fzkbc\"><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/604f1c9756c3676f1ed003d6\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">아이 교육</h3></a><span class=\"css-gefh0b\"></span><a data-testid=\"pressable\" class=\"css-346lod\" href=\"/ko/categories/62fee7187e7da70bfa57950d\" style=\"opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);\"><h3 data-testid=\"title\" class=\"css-13vbe2p\">부모 교육</h3></a></div></div>",
+        "detail": "cla101-selenium",
+        "documentation": {}
+    },
+    {
+        "label": "header_converter",
+        "kind": 2,
+        "importPath": "myutil",
+        "description": "myutil",
+        "peekOfCode": "def header_converter(text):\n    elements = text.split()\n    result_dict = {}\n    key = None\n    value = []\n    for element in elements:\n        if element.endswith(\":\"):\n            if key is not None:\n                result_dict[key.rstrip(\":\")] = \" \".join(value)\n            key = element",
+        "detail": "myutil",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "myutil",
+        "description": "myutil",
+        "peekOfCode": "text = \"\"\"\n:authority:\ncdn-production-gateway.class101.net\n:method:\nPOST\n:path:\n/graphql\n:scheme:\nhttps\naccept:",
+        "detail": "myutil",
         "documentation": {}
     }
 ]
